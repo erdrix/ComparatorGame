@@ -1,0 +1,16 @@
+ConsoleSalon Sony PlayStation1
+ConsoleSalon Sony PlayStation2
+ConsoleSalon Sony PlayStation3
+ConsoleSalon Sony PlayStation4
+ConsoleSalon Microsoft Xbox
+ConsoleSalon Microsoft Xbox360
+ConsoleSalon Microsoft XboxOne
+ConsoleSalon Nintendo GameCube
+ConsoleSalon Nintendo Wii
+ConsoleSalon Nintendo WiiU
+PC Microsoft Portable
+PC Microsoft Fixe
+PC Apple Mac
+ConsolePortable Sony PSP
+ConsolePortable Sony PSVita
+ConsolePortable Nintendo 3DS

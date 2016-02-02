@@ -1,0 +1,7 @@
+Manette Nintendo WiiMote
+Manette Nintendo GamePad
+Manette Microsoft XboxOne
+Manette Microsoft Xbox360
+Webcam Microsoft Kinect
+Volant Nintendo Volant
+Planche Nintendo BalanceBoard
