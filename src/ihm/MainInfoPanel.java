@@ -12,6 +12,7 @@ public class MainInfoPanel extends InfoPanel{
 		setLayout(new BorderLayout());
 		add(new JLabel("Informations principales : "),BorderLayout.NORTH);
 		add(new JSeparator(JSeparator.HORIZONTAL),BorderLayout.CENTER);
+		add(new CritInfoPanel(criterions), BorderLayout.SOUTH);
 		
 		
 	}
