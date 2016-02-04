@@ -1,4 +1,4 @@
-package ihm;
+package criterions_ihm;
 
 import java.lang.reflect.Field;
 

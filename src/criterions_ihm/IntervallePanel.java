@@ -1,4 +1,4 @@
-package ihm;
+package criterions_ihm;
 
 
 import javax.swing.JPanel;
@@ -14,7 +14,7 @@ public class IntervallePanel extends JPanel{
 
 	public IntervallePanel(String classname){
 		if(classname.equals("DPrice")){
-			mrs = new MyRangeSlider(0,100,25,50);
+			mrs = new MyRangeSlider(0,100,0,50);
 			mrs.setMajorTickSpacing(25);
 			mrs.setMinorTickSpacing(5);
 			mrs.setPaintTicks(true);
@@ -23,7 +23,7 @@ public class IntervallePanel extends JPanel{
 		}
 		
 		if(classname.equals("DReleaseDate")){
-			mrs = new MyRangeSlider(1950,2020,1975,2000);
+			mrs = new MyRangeSlider(1950,2020,1950,1985);
 			mrs.setMajorTickSpacing(35);
 			mrs.setMinorTickSpacing(5);
 			mrs.setPaintTicks(true);

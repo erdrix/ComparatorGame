@@ -1,4 +1,4 @@
-package ihm;
+package criterions_ihm;
 
 import javax.swing.JPanel;
 import javax.swing.JSlider;
