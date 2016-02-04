@@ -2,6 +2,7 @@ package ihm;
 
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
+import javax.swing.JSeparator;
 
 public class MainInfoPanel extends InfoPanel{
 
@@ -10,7 +11,8 @@ public class MainInfoPanel extends InfoPanel{
 		super(criterions);
 		setLayout(new BorderLayout());
 		add(new JLabel("Informations principales : "),BorderLayout.NORTH);
-		add(new CritInfoPanel(criterions), BorderLayout.CENTER);
+		add(new JSeparator(JSeparator.HORIZONTAL),BorderLayout.CENTER);
+		add(new CritInfoPanel(criterions), BorderLayout.SOUTH);
 		
 		
 	}

@@ -8,5 +8,8 @@ public class BinaryPanel extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	public BinaryPanel(String classname){
+		
+	}
 
 }

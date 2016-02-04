@@ -14,7 +14,7 @@ public class CritPanel extends JPanel{
 	
 	public CritPanel(){
 		setLayout(new GridLayout(2,0) );
-		String[] main_crit = {"DTitle","DEditor"};
+		String[] main_crit = {"DTitle","DEditor","DPrice","DReleaseDate"};
 		String[] aux_crit = {"DMark","DEditor"};
 		add(new MainInfoPanel(main_crit));
 		add(new AuxInfoPanel(aux_crit));
