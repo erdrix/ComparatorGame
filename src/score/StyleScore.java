@@ -12,9 +12,8 @@ public abstract class StyleScore extends Score<String>{
 	private String d_style;
 
 	public StyleScore(String s1){
-		style_tree = getListe();
 		// 	Styles de jeux de l'offre et de la demande
-		s_style = s1;
+		s_style = new String(s1);
 	}
 	@Override
 	public abstract String extractD(DemandMethods myDemand); 
