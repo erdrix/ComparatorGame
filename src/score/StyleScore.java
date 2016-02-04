@@ -12,15 +12,6 @@ public abstract class StyleScore extends Score<String>{
 	private String d_style;
 
 	public StyleScore(String s1){
-		style_tree=new TreeMap<>();
-		style_tree.put("A-RPG", "RPG, Sous-Action");
-		style_tree.put("MMORPG","RPG");
-		style_tree.put("Fiction Intéractive", "Aventure, Sous-Aventure");
-		style_tree.put("Visual Novel", "Aventure, Sous-Aventure");
-		style_tree.put("Infiltration", "Action Aventure, Sous-Action, Sous-Aventure");
-		style_tree.put("Survival Horror", "Action Aventure, Sous-Action, Sous-Aventure");
-		
-		// 	Styles de jeux de l'offre et de la demande
 		s_style = new String(s1);
 	}
 	@Override
