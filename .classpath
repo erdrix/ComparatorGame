@@ -2,5 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/filer/etudiants/g7/h12079869/git/ComparatorGame/JIDE/jide-oss-3.6.12.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
