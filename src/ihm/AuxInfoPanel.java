@@ -11,8 +11,10 @@ public class AuxInfoPanel extends InfoPanel{
 	public AuxInfoPanel(String[] criterions){
 		super(criterions);
 		setLayout(new BorderLayout());
-		add(new JLabel("Informations complémentaires : "),BorderLayout.NORTH);
-		add(new JSeparator(JSeparator.HORIZONTAL),BorderLayout.CENTER);			
+		add(new JLabel("Informations complï¿½mentaires : "),BorderLayout.NORTH);
+		add(new JSeparator(JSeparator.HORIZONTAL),BorderLayout.CENTER);	
+		add(new CritInfoPanel(criterions), BorderLayout.SOUTH);
+				
 	}
 
 }
