@@ -7,16 +7,13 @@ import supply.DemandMethods;
 public abstract class BinaryScore extends Score<Integer>{
 		// ATTRIBUTS
 	ArrayList<String> elements;	// Contients les deux choix possibles pour un critère.
-	int val;					// Valeur encapsulée par l'offre.
+	protected String val;					// Valeur encapsulée par l'offre.
 	
 		// CONSTRUCTEURS
-	public BinaryScore(int value, String...item)
+	public BinaryScore(String value, ArrayList<String> item)
 	{
 		super();
-		elements = new ArrayList<String>();
-		// Création de la correspondance entre 0 et 1 et signification.
-		for(String c : item)
-			elements.add(c);
+		elements = item;
 		val         = value;
 		scoreMax    = 50;
 	}
@@ -28,8 +25,9 @@ public abstract class BinaryScore extends Score<Integer>{
 	 */
 	public int getScore(DemandMethods myDemand) {
 		Integer field = extractD(myDemand);
+		
 		//Vérifie si le critère de l'offre correspond à la demande.
-		return score = (val == field)? scoreMax+getScoreSpe(myDemand) : 0+getScoreSpe(myDemand);	
+		return score = (val == elements.get(field))? scoreMax+getScoreSpe(myDemand) : 0+getScoreSpe(myDemand);	
 	}
 	
 	public String toString(){

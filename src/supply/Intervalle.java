@@ -24,17 +24,11 @@ public class Intervalle {
 	 * Fonction retournant la borne inférieur de l'intervalle
 	 * @return first : float représentant la borne inférieur de l'intervalle
 	 */
-	public float getFirst()
-	{
-		return first;
-	}
+	public float getFirst(){return first;}
 	
 	/**
 	 * Fonction retournant la borne supérieur de l'intervalle
 	 * @return second : float représentant la borne supérieur de l'intervalle
 	 */
-	public float getSecond()
-	{
-		return second;
-	}
+	public float getSecond(){return second;}
 }

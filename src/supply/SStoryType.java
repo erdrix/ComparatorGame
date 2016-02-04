@@ -14,11 +14,7 @@ public class SStoryType extends MultipleScore<int[]>{
 	static private ArrayList<String> typeS;
 	
 		// CONSTRUCTEUR
-	public SStoryType(String ...type)
-	{
-		super();
-		storyType = (type.length == 0)? null : type;
-	}
+	public SStoryType(String ...type){super(); storyType = (type.length == 0)? null : type;}
 	
 		// METHODES
 	public static void Init()
@@ -43,6 +39,9 @@ public class SStoryType extends MultipleScore<int[]>{
 			e.printStackTrace();
 		}
 	}
+	
+	public static ArrayList<String> getOptions(){return typeS;}
+	
 	@Override
 	public int getScore(DemandMethods myDemand) {
 
@@ -73,4 +72,7 @@ public class SStoryType extends MultipleScore<int[]>{
 	public int[] extractD(DemandMethods myDemand) {
 		return myDemand.getStoryType();
 	}
+	
+	public String[] getStoryType(){return storyType;}
+	public void setStoryType(String[] value){storyType = value;}
 }

@@ -2,7 +2,9 @@
  * 
  */
 package demand;
-import supply.Triplet;
+import java.util.ArrayList;
+import java.util.TreeMap;
+
 
 /**
  * @author guitt
@@ -10,24 +12,15 @@ import supply.Triplet;
  */
 public abstract class DEquipement {
 		// ATTRIBUTS
-	protected Triplet<String, String, Integer>[] equipements;	// Contient l'ensemble des équipements souhaités (constructeur, nom, type).
+	protected ArrayList<TreeMap<String, String>> equipements;	// Contient l'ensemble des équipements souhaités (constructeur, nom, type).
 		
 		// CONSTRUCTEUR 
-	@SuppressWarnings("unchecked")
-	public DEquipement (String[] c, String[] n, int[] t)
+	public DEquipement (ArrayList<TreeMap<String, String>> items)
 	{
-		if(t == null)
-		{
+		if(items == null)
 			equipements = null;
-		}
 		else
-		{
-			equipements = new Triplet[t.length];
-			for (int i=0; i < t.length; i++)
-			{
-				equipements[i] = new Triplet<String, String, Integer>(c[i], n[i], t[i]);
-			}
-		}
+			equipements = items;
 	}
 		
 		// METHODES 
@@ -35,7 +28,7 @@ public abstract class DEquipement {
 	 * Fonction getName retourne le nom de l'accessoire.
 	 * @return string : nom de l'accessoire.
 	 */
-	public Triplet<String, String, Integer>[] getEquipements()
+	public ArrayList<TreeMap<String, String>> getEquipements()
 	{
 		return equipements;
 	}

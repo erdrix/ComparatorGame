@@ -14,11 +14,11 @@ import supply.DemandMethods;
 public abstract class EcartScore extends Score<Integer>{
 		// ATTRIBUTS
 	protected ArrayList<String> elements;	/** Tableau contenant l'ensemble des choix possibles pour les critères implémentant ce score.*/
-	protected int val;						/** choix pour une offre précise.*/
+	protected String val;						/** choix pour une offre précise.*/
 	protected double transition[];			/** Tableau contenant le coup des transitions entre deux "états" consécutifs (entre "Débutant" et "intermédiaire" par exemple).*/
 	protected double firstTransition;
 		// CONSTRUCTEUR
-	public EcartScore(int v, double firstTransit, ArrayList<String> item)
+	public EcartScore(String v, double firstTransit, ArrayList<String> item)
 	{
 		super();
 		elements = item;
@@ -48,17 +48,17 @@ public abstract class EcartScore extends Score<Integer>{
 		transition[nbTransitions-1] = rest;
 		
 		// Si la demande ne correspond pas l'offre.
-		if( val != field)
+		if( val != elements.get(field))
 		{
 			int first = 0;
 			
 			// Si on decend dans le tableau (offre< demande).
-			if(val < field)
+			if(elements.indexOf(val) < field)
 				first = elements.size()-1;
 				
 			// Calcul du score
 			
-			for(int j=Math.abs(field-first) ; j <Math.abs(val-first); j++)
+			for(int j=Math.abs(field-first) ; j <Math.abs(elements.indexOf(val)-first); j++)
 			{
 				score -= (int)(scoreMax*transition[j]);
 			}

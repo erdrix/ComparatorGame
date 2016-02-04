@@ -6,9 +6,11 @@
 
 package demand;
 
+import java.util.ArrayList;
+import java.util.TreeMap;
 import supply.DemandMethods;
 import supply.Intervalle;
-import supply.Triplet;
+
 
 /* Titre - Description - Editeur - Prix -
 Note du jeu - Date de sortie - Mode de jeu - 
@@ -188,7 +190,7 @@ public class Demand implements DemandMethods{
 	 * Fonction retournant l'ensemble des choix pour les supports compatibles.
 	 * @return dgs.getEquipements() :  Triplet<String, String, Integer>[] symbolisant les supports compatibles choisis (constructeur, nom, type).
 	 */
-	public Triplet<String, String, Integer>[] getGameSupportEquipements()
+	public ArrayList<TreeMap<String, String>> getGameSupportEquipements()
 	{
 		
 		return (dgs == null)?null : dgs.getEquipements();
@@ -199,7 +201,7 @@ public class Demand implements DemandMethods{
 	 * Fonction retournant l'ensemble des choix pour les accessoires compatibles.
 	 * @return dgs.getEquipements() :  Triplet<String, String, Integer>[] symbolisant les accessoires compatibles choisis (constructeur, nom, type).
 	 */
-	public Triplet<String, String, Integer>[] getAccessoryEquipements()
+	public ArrayList<TreeMap<String, String>> getAccessoryEquipements()
 	{
 		return (dacce ==null)? null:dacce.getEquipements();
 	}

@@ -8,7 +8,7 @@ import java.util.TreeMap;
 public abstract class KeywordScore extends Score<String>{
 	
 	// ATTRIBUTS
-	String element;
+	protected String element;
 	int exact_score;
 	int approx_score;
 	int final_score;

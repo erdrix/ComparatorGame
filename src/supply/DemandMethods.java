@@ -3,6 +3,9 @@
  */
 package supply;
 
+import java.util.ArrayList;
+import java.util.TreeMap;
+
 /**
  * @author guitt
  *
@@ -20,6 +23,6 @@ public interface DemandMethods {
 	public int getDLifeTime();
 	public String getGameStyle();
 	public int[] getStoryType();
-	public Triplet<String, String, Integer>[] getGameSupportEquipements();
-	public Triplet<String, String, Integer>[] getAccessoryEquipements();
+	public ArrayList<TreeMap<String, String>> getGameSupportEquipements();
+	public ArrayList<TreeMap<String, String>> getAccessoryEquipements();
 }

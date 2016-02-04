@@ -8,20 +8,17 @@ public abstract class StyleScore extends Score<String>{
 	
 	// Nom du Style de jeu => Groupe de Style principal, Groupe secondaire
 	private TreeMap<String,String> style_tree; 
-	private String s_style;
+	protected String s_style;
 	private String d_style;
 
 	public StyleScore(String s1){
-		style_tree.put("Fiction Intéractive", "Aventure, Sous-Aventure");
-		style_tree.put("Visual Novel", "Aventure, Sous-Aventure");
-		style_tree.put("Infiltration", "Action Aventure, Sous-Action, Sous-Aventure");
-		style_tree.put("Survival Horror", "Action Aventure, Sous-Action, Sous-Aventure");
-		
+		style_tree = getListe();
 		// 	Styles de jeux de l'offre et de la demande
 		s_style = s1;
 	}
 	@Override
 	public abstract String extractD(DemandMethods myDemand); 
+	public abstract TreeMap<String, String> getListe();
 	@Override
 	public int getScore(DemandMethods myDemand) {
 		d_style = myDemand.getGameStyle();

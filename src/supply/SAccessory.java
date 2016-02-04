@@ -3,10 +3,7 @@
  */
 package supply;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.TreeMap;
 
 /**
@@ -16,58 +13,52 @@ import java.util.TreeMap;
 public class SAccessory extends SEquipement {
 		// ATTRIBUTS
 	static protected ArrayList<String> typeE;
-	static protected TreeMap<String, ArrayList<Couple<String, String>>> assoc;
+	static protected TreeMap<String, ArrayList<TreeMap<String, String>>> assoc;
 	
 		// CONSTRUCTEUR
-	public SAccessory(String[] c, String[] n, String[] t) {
-		super(c, n, t);
-	}
+	public SAccessory(ArrayList<TreeMap<String, String>>items) {super(items);}
 	
 		// METHODES
-	static public void Init()
+	static public void Init(ArrayList<TreeMap<String, String>> items)
 	{
-		assoc = new TreeMap<String, ArrayList<Couple<String, String>>>();
 		typeE = new ArrayList<String>();
-		File f = new File(".\\src\\supply\\Accessories.txt");
-		Scanner sc = null;
-		try {
-			sc = new Scanner(f);
-			while(sc.hasNext())
+		ArrayList<TreeMap<String, String>> init = new ArrayList<>();
+		assoc = new TreeMap<String, ArrayList<TreeMap<String, String>>>();
+		
+		// Création du TreeMap contenant en clé les noms des type d'équipements et en valeur un ArrayList de couple représentant le Constructeur et le nom.
+		if(items == null)
+			assoc = null;
+		
+		for(TreeMap<String, String> item : items)
+		{
+			init = new ArrayList<>();
+			// si il y a une clé "type".
+			if(item.containsKey("type"))
 			{
-				String current = sc.nextLine();
-				String fields[] = current.split(" ");
-				
-				ArrayList<Couple<String, String>> init = new ArrayList<Couple<String, String>>();
-
-				// Si c'est la première fois que l'on rencontre cet équipement
-				if(!assoc.containsKey(fields[0]))
+				String type = item.get("type");
+				item.remove("type");
+				// Si on rencontre pour la première fois ce type d'équipement.
+				if(!assoc.containsKey(type))
 				{
-					// On l'ajoute à typeE.
-					typeE.add(fields[0]);
-					init.add(new Couple<String, String>(fields[1], fields[2]));
-					
-					assoc.put(fields[0],init);
+					typeE.add(type);
+					init.add(item);	
+					assoc.put(type,init);	// On initialise la nouvelle entrée avec un premier couple (constructeur, nom).
 				}
-				else
-				{
-					assoc.get(fields[0]).add(new Couple<String, String>(fields[1], fields[2]));
-				}
+				else // Sinon 
+					assoc.get(type).add(item);	// On ajoute un couple (constructeur, nom).
 			}
-			sc.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
-	
 	}
 
 	
-	public ArrayList<String> getTypeE()
-	{
-		return typeE;
-	}
+	public ArrayList<String> getTypeE(){return typeE;}
+	public static ArrayList<String> getTypeAccessories(){return typeE;}
+	public static TreeMap<String, ArrayList<TreeMap<String, String>>> getOptions(){return assoc;}
+	
 	@Override
-	public Triplet<String, String, Integer>[] extractD(DemandMethods myDemand) {
+	public ArrayList<TreeMap<String, String>> extractD(DemandMethods myDemand) {
 		return myDemand.getAccessoryEquipements();
 	}
+	
+	public TreeMap<String, ArrayList<TreeMap<String, String>>> getAccessories(){return equipements;}
 }
